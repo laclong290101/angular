@@ -1,0 +1,141 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>eCommerce Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+    <header
+        class="d-flex tw-flex-column flex-md-row align-items-center tw-p-3 px-md-4 tw-mb-3 bg-body tw-border-bottom tw-shadow-sm">
+        <div class="container">
+            <div class="logo">
+                <span>TH</span>
+                <strong>Travels</strong>
+            </div>
+            <div class="mainTop">
+                <div class="contactTop">
+                    <ul>
+                        <li><i class="tw-mx-2 fa fa-phone"></i>+34 266 0413</li>
+                        <li><span class="fa fa-envelope"></span> Nguyentruonghai@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="navTop">
+                    <ul class="socialTop">
+                        <!-- <li>
+                    <span class="fab fa-google-plus"></span>
+                </li>
+                <li>
+                    <span class="fab fa-linkedin"></span>
+                </li>
+                <li>
+                    <span class="fab fa-twitter"></span>
+                </li>
+                <li>
+                    < class="fab fa-facebook-f"></span>
+                </li> -->
+                    </ul>
+                    <nav>
+                        <ul class="flex py-3">
+                            <li routerLink="/" class="px-4 font-bold">
+                                Home
+                            </li>
+                            <li routerLink="/product" class="px-4 font-bold">
+                                Product
+                            </li>
+                            <li routerLink="/manager" class="px-4 font-bold">
+                                Manager
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="text" id="input"
+                        onclick="myFunction()">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card" *ngIf="product">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+
+                        <div class="preview-pic tab-content">
+                            <div class="tab-pane active" id="pic-1"><img [src]="product.img" /></div>
+                        </div>
+                        <ul class="preview-thumbnail nav nav-tabs">
+                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img [src]="product.img" /></a>
+                            </li>
+                            <li><a data-target="#pic-2" data-toggle="tab"><img [src]="product.img" /></a></li>
+                            <li><a data-target="#pic-3" data-toggle="tab"><img [src]="product.img" /></a></li>
+                            <li><a data-target="#pic-4" data-toggle="tab"><img [src]="product.img" /></a></li>
+                            <li><a data-target="#pic-5" data-toggle="tab"><img [src]="product.img" /></a></li>
+                        </ul>
+
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 class="product-title">{{product.name}}</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <span class="review-no">41 reviews</span>
+                        </div>
+                        <p class="product-description">{{product.desc}}</p>
+                        <h4 class="price">current price: <span>{{product.price}}</span></h4>
+                        <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong>
+                        </p>
+                        <h5 class="sizes">sizes:
+                            <span class="size" data-toggle="tooltip" title="small">s</span>
+                            <span class="size" data-toggle="tooltip" title="medium">m</span>
+                            <span class="size" data-toggle="tooltip" title="large">l</span>
+                            <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+                        </h5>
+                        <h5 class="colors">colors:
+                            <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+                            <span class="color green"></span>
+                            <span class="color blue"></span>
+                        </h5>
+                        <div class="action">
+                            <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                            <button class="like btn btn-default" type="button"><span
+                                    class="fa fa-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

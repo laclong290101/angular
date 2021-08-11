@@ -1,0 +1,32 @@
+<div class="flex">
+    <h2>Quản lý Danh muc</h2>
+</div>
+<button class="btn btn-primary " routerLink="/category/add">
+    Add Category
+</button>
+<button class="btn btn-primary ms-1 " routerLink="/dashboard">
+    Dashboard
+</button>
+<table class="table-bordered table mt-5">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categories; index as i">
+            <td>{{i + 1}}</td>
+            <td>{{category.name}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="removeCategory(category.id)">
+                    Delete
+                </button>
+                <button class="btn btn-info ms-1" routerLink="/category/edit/{{category.id}}">
+                    Edit
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

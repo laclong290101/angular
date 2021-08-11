@@ -1,0 +1,108 @@
+<div>
+    <div>
+        <header
+            class="d-flex tw-flex-column flex-md-row align-items-center tw-p-3 px-md-4 tw-mb-3 bg-body tw-border-bottom tw-shadow-sm">
+            <div class="container">
+                <div class="logo">
+                    <span>TH</span>
+                    <strong>Travels</strong>
+                </div>
+                <div class="mainTop">
+                    <div class="contactTop">
+                        <ul>
+                            <li><i class="tw-mx-2 fa fa-phone"></i>+34 266 0413</li>
+                            <li><span class="fa fa-envelope"></span> Nguyentruonghai@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="navTop">
+                        <ul class="socialTop">
+                            <!-- <li>
+                            <span class="fab fa-google-plus"></span>
+                        </li>
+                        <li>
+                            <span class="fab fa-linkedin"></span>
+                        </li>
+                        <li>
+                            <span class="fab fa-twitter"></span>
+                        </li>
+                        <li>
+                            < class="fab fa-facebook-f"></span>
+                        </li> -->
+                        </ul>
+                        <nav>
+                            <ul class="flex py-3">
+                                <li routerLink="/" class="px-4 font-bold">
+                                    Home
+                                </li>
+                                <li routerLink="/product" class="px-4 font-bold">
+                                    Product
+                                </li>
+                                <li routerLink="/blog" class="px-4 font-bold">
+                                    Blog
+                                </li>
+                                <li routerLink="/contact" class="px-4 font-bold">
+                                    Contact
+                                </li>
+                                <li routerLink="/login" class="px-4 font-bold">
+                                    Login
+                                </li>
+                                <li routerLink="/manager" class="px-4 font-bold">
+                                    Manager
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="navbar-brand">Danh mục</div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngFor="let category of categories">
+                        <li class="tw-inline-block" key={index}>
+                            <!-- <Link to={`/categories/${item._id}`}> -->
+                            <h3 class="tw-p-2">{{category.name}}</h3>
+                            <!-- </Link> -->
+                        </li>
+
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="text" id="input"
+                            onclick="myFunction()">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <select class="form-select my-2" aria-label="Default select example" id="filter">
+            <option value>Mức giá</option>
+            <option value="all">Tất cả</option>
+            <option value="asc">Thấp - Cao</option>
+            <option value="desc">Cao - Thấp</option>
+            <option value={200}>200-400</option>
+            <option value>400-600</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-4" *ngFor="let product of products;index as i">
+            <div class="card p-4" key={index}>
+                <img [src]="product.img" />
+                <div class="card-body">
+                    <h3 class="card-title">{{product.name}} </h3>
+                    <p class="card-text"> {{product.price}}</p>
+                    <button routerLink="/product/{{product.id}}" class="btn btn-primary">Chi tiết
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
